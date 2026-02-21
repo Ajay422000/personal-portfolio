@@ -1,15 +1,21 @@
 /* ===== Custom Properties ===== */
 :root {
-    --bg-color: #0B0C10;     /* Deep dark background */
-    --surface-color: #1F2833; /* Slightly lighter surface for cards */
-    --primary-color: #66FCF1; /* Vibrant neon cyan */
-    --secondary-color: #45A29E; /* Muted cyan */
-    --text-main: #C5C6C7;    /* Light grey text */
-    --text-light: #FFFFFF;   /* Pure white headings */
-    
+    --bg-color: #0B0C10;
+    /* Deep dark background */
+    --surface-color: #1F2833;
+    /* Slightly lighter surface for cards */
+    --primary-color: #66FCF1;
+    /* Vibrant neon cyan */
+    --secondary-color: #45A29E;
+    /* Muted cyan */
+    --text-main: #C5C6C7;
+    /* Light grey text */
+    --text-light: #FFFFFF;
+    /* Pure white headings */
+
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -33,13 +39,18 @@ body {
     overflow-x: hidden;
     position: relative;
     /* Background subtle gradient mesh */
-    background-image: 
+    background-image:
         radial-gradient(circle at 15% 50%, rgba(69, 162, 158, 0.08), transparent 25%),
         radial-gradient(circle at 85% 30%, rgba(102, 252, 241, 0.08), transparent 25%);
     background-attachment: fixed;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     color: var(--text-light);
     font-weight: 700;
@@ -220,7 +231,8 @@ ul {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-top: 100px; /* Offset for navbar */
+    padding-top: 100px;
+    /* Offset for navbar */
     gap: 2rem;
 }
 
@@ -324,11 +336,25 @@ ul {
 }
 
 @keyframes blob-bounce {
-    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-    25% { border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%; }
-    50% { border-radius: 60% 40% 50% 50% / 50% 50% 40% 60%; }
-    75% { border-radius: 40% 60% 60% 40% / 60% 40% 50% 50%; }
-    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    25% {
+        border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%;
+    }
+
+    50% {
+        border-radius: 60% 40% 50% 50% / 50% 50% 40% 60%;
+    }
+
+    75% {
+        border-radius: 40% 60% 60% 40% / 60% 40% 50% 50%;
+    }
+
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
 }
 
 /* ===== About Section ===== */
@@ -377,7 +403,7 @@ ul {
 /* ===== Skills Section ===== */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -488,7 +514,7 @@ ul {
 /* ===== Projects Section ===== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -681,7 +707,7 @@ footer {
     .hero-buttons {
         justify-content: center;
     }
-    
+
     .blob-wrapper {
         width: 300px;
         height: 300px;
@@ -732,13 +758,15 @@ footer {
     .nav-links.active {
         right: 0;
     }
-    
+
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
@@ -746,18 +774,54 @@ footer {
     .timeline::before {
         left: 0;
     }
-    
+
     .timeline-dot {
         left: -11px;
         width: 16px;
         height: 16px;
     }
-    
+
     .timeline {
         padding-left: 20px;
     }
-    
+
     .about-text {
         padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .role {
+        font-size: 1.2rem;
+    }
+
+    .blob-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-buttons {
+        gap: 0.5rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    .section {
+        padding: 60px 4%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .contact-container {
+        padding: 1.5rem;
     }
 }
