@@ -29,6 +29,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -38,6 +39,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    width: 100vw;
     /* Background subtle gradient mesh */
     background-image:
         radial-gradient(circle at 15% 50%, rgba(69, 162, 158, 0.08), transparent 25%),
@@ -251,7 +253,7 @@ ul {
     font-size: 4.5rem;
     line-height: 1.1;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, #FFFFFF, var(--primary-color));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -274,6 +276,7 @@ ul {
     gap: 1rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .social-links {
@@ -403,10 +406,12 @@ ul {
 /* ===== Skills Section ===== */
 .skills-grid {
     display: grid;
+    /* Ensure cards always fit screen */
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .skill-card {
@@ -514,10 +519,12 @@ ul {
 /* ===== Projects Section ===== */
 .projects-grid {
     display: grid;
+    /* Ensure cards always fit screen */
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .project-card {
@@ -738,13 +745,15 @@ footer {
     /* Mobile Nav */
     .hamburger {
         display: flex;
+        z-index: 1001;
+        /* Ensure hamburger stays above the menu overlay */
     }
 
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 100%;
         height: 100vh;
         background: rgba(11, 12, 16, 0.95);
         backdrop-filter: blur(15px);
@@ -752,12 +761,13 @@ footer {
         justify-content: center;
         align-items: center;
         transition: right 0.4s ease;
-        z-index: -1;
+        z-index: 999;
     }
 
     .nav-links.active {
         right: 0;
     }
+
 
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
@@ -806,6 +816,14 @@ footer {
 
     .hero-buttons {
         gap: 0.5rem;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
     }
 
     .btn {
@@ -823,5 +841,14 @@ footer {
 
     .contact-container {
         padding: 1.5rem;
+    }
+
+    .timeline-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .projects-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }
