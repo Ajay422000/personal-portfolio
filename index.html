@@ -49,7 +49,7 @@
             </p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn primary-btn">Hire Me</a>
-                <a href="https://drive.google.com/file/d/1H7XKyBzZ4fB3Aj2cB0JLtHcucK7pvNsS/view?usp=drive_link"
+                <a href="https://drive.google.com/file/d/1ZkIxPdxgZKbp-nSbc0zUD7HOhW2EiCcv/view?usp=sharing"
                     target="_blank" class="btn secondary-btn">Download CV</a>
             </div>
             <div class="social-links">
@@ -243,13 +243,16 @@
         <div class="contact-container glass-card">
             <div class="contact-info">
                 <h3>Let's Connect</h3>
-                <p>I'm currently looking for new opportunities as a DevOps Engineer. Whether you have a question or just
-                    want to say hi, I'll try my best to get back to you!</p>
+                <p>Have a question or just want to say hi? Feel free to reach out!</p>
 
                 <div class="contact-details">
                     <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="https://wa.me/+919061371854" target="_blank">WhatsApp</a>
+                    </div>
+                    <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>Contact me via LinkedIn messages</span>
+                        <a href="mailto:ajaykrishna422000@gmail.com" target="_blank">Gmail</a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
@@ -262,19 +265,17 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form"
-                onsubmit="event.preventDefault(); window.location.href='https://docs.google.com/forms/d/1YNuumhuXBhekOBDBrHiSsoUA5BcDmewCDZLTrHH4Q7c/edit?usp=sharing';">
+            <form class="contact-form" id="contactForm">
                 <div class="input-group">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" id="name" placeholder="Your Name" required>
                 </div>
                 <div class="input-group">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
                 </div>
                 <div class="input-group">
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn primary-btn submit-btn">Send Message <i
-                        class="fas fa-paper-plane"></i></button>
+                <button type="submit" class="btn primary-btn submit-btn">Send Message</button>
             </form>
         </div>
     </section>

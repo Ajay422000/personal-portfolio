@@ -86,4 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         appearOnScroll.observe(el);
     });
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData();
+        // Use your actual entry IDs here:
+        formData.append("entry.1405682626", document.getElementById("name").value);
+        formData.append("entry.990110632", document.getElementById("email").value);
+        formData.append("entry.2090737636", document.getElementById("message").value);
+
+        fetch(
+            "https://docs.google.com/forms/u/0/d/e/1FAIpQLScxVuZXZnIyJksK3gYTPXa88KzPZx18CRxE7yMrh2O4R0STyw/formResponse",
+            {
+                method: "POST",
+                mode: "no-cors",
+                body: formData,
+            }
+        )
+            .then(() => {
+                alert("Message sent successfully!");
+                this.reset();
+            })
+            .catch(() => {
+                alert("Failed to send message. Please try again.");
+            });
+    });
 });
