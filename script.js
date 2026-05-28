@@ -91,12 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
     const message = document.getElementById("message").value;
-
-    // Your Telegram Bot Token
     const botToken = "8127437587:AAFlJRazj2zdOqh_HKsp1-XcsRuTpQobVg8";
-
-    // Your Telegram Group Chat ID
     const chatId = "-1003920952111";
 
     const text = `
@@ -104,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 👤 Name: ${name}
 📧 Email: ${email}
+📱 Phone: ${phone}
 💬 Message: ${message}
 `;
 
