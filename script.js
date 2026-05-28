@@ -86,29 +86,46 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         appearOnScroll.observe(el);
     });
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-        e.preventDefault();
+   document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-        const formData = new FormData();
-        // Use your actual entry IDs here:
-        formData.append("entry.1405682626", document.getElementById("name").value);
-        formData.append("entry.990110632", document.getElementById("email").value);
-        formData.append("entry.2090737636", document.getElementById("message").value);
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-        fetch(
-            "https://docs.google.com/forms/u/0/d/e/1FAIpQLScxVuZXZnIyJksK3gYTPXa88KzPZx18CRxE7yMrh2O4R0STyw/formResponse",
-            {
-                method: "POST",
-                mode: "no-cors",
-                body: formData,
-            }
-        )
-            .then(() => {
-                alert("Message sent successfully!");
-                this.reset();
+    // Your Telegram Bot Token
+    const botToken = "8127437587:AAFlJRazj2zdOqh_HKsp1-XcsRuTpQobVg8";
+
+    // Your Telegram Group Chat ID
+    const chatId = "-1003920952111";
+
+    const text = `
+🔥 New Portfolio Message
+
+👤 Name: ${name}
+📧 Email: ${email}
+💬 Message: ${message}
+`;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+    try {
+        await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: text
             })
-            .catch(() => {
-                alert("Failed to send message. Please try again.");
-            });
+        });
+
+        alert("Message sent successfully!");
+        this.reset();
+
+    } catch (error) {
+        alert("Failed to send message.");
+    }
     });
 });
